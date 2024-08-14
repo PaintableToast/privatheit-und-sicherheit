@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+
+% Set margins to zero
+\geometry{
+  a4paper,
+  left=1cm,
+  right=1cm,
+  top=1cm,
+  bottom=1cm,
+}
+\begin{document}
+
+\section{Vorlesung}
+\subsection{IT-System}
+\subsubsection{IT-System}
+technisches System mit der Fähigkeit zur Speicherung und Verarbeitung von Informationen
+\subsubsection{Information}
+wird durch Daten repräsentiert und ergibt sich durch eine festgelegte Interpretation der Daten
+\subsubsection{Objekte}
+\begin{itemize}
+    \item \textbf{passive} Objekte (z.B. Dateien): Fähigkeit zur \textbf{Speicherung} von Information
+    \item \textbf{aktive} Objekte (z.B. Prozesse): Fähigkeit zur \textbf{Speicherung und Verarbeitung} von Informationen
+    \item \textbf{Assets}: Informationen und Objekte, die repräsentiert, sind die schützenswerten Güter (asset) eines Systems 
+\end{itemize}
+\subsubsection{Subjekte}
+\textbf{Benutzer oder aktive Objekte}, die im Auftrag von Benutzern aktiv sind (z.B. Prozesse, Server, Prozeduren)
+\subsubsection{Zugriffe}
+Interaktionen zwischen einem Subjekt und einem Objekt durch die Informationsfluss auftritt
+\begin{itemize}
+    \item Zugriff auf Datenobjekt ist gleichzeitig Zugriff auf die dadurch repräsentierte Information
+\end{itemize}
+\subsection{Sicherheit}
+\subsubsection{Funktionssicherheit (engl. safety)}
+\begin{itemize}
+    \item Ist-Funktionalität == Soll-Funktionalität
+    \item Das System funktioniert unter allen (normalen) Betriebsbedingungen
+    \item z.B. technische Fehlverhalten des Systems durch Programmierfehler $\Rightarrow$ Programmvalidierung oder -verifikation können es lösen
+\end{itemize}
+\subsubsection{Informationssicherheit (security)}
+    Informationssicherheit ist gegeben, wenn "ein funktionssicheres System nur solche Systemzustände annimmt, die zu keiner \textbf{unautorisierten Informationsverändeurng oder -gewinnung} führen"
+\subsubsection{Datensicherheit}
+\begin{itemize}
+    \item Datensicherheit ist gegeben, wenn "ein funktionssicheres System nur solche Systemzustände annimmt, die zu keinem \textbf{unatuorisierten Zugriff} auf Systemressourcen und insbesondere auf Daten führen"
+    \item Umfasst Datensicherung (backup): "Schutz vor Datenverlust durch Erstellung von Sicherungskopien"
+\end{itemize}
+\subsubsection{Privatheit, Datenschutz}
+natürliche Person kontrolliert Erhebung und Verarbeitung ihrer persönlichen Daten
+\begin{itemize}
+    \item Informationelle Selbstbestimmung
+\end{itemize}
+\subsubsection{Verlässlichkeit}
+Funktionssicherheit + Funktion wird zuverlässig erbracht 
+\subsection{Schutzziele}
+Welche Funktionen können wir implementieren, um ein informationssicheres bzw. datensicheres System zu haben?
+\begin{itemize}
+    \item Identifikation und Verifikation der Identität der zugreifenden Subjekte
+    \item Zugriffseinschränkung und -kontrolle
+    \item Zuordung von Aktionen und Zugriffen zu zugreifenden Subjekten
+\end{itemize}
+\subsection{Authentizität}
+\subsubsection{Authentizität}
+\begin{itemize}
+    \item "Echtheit und Glaubwürdigkeit des Objekts bzw. Subjekts, die anhand einer \textbf{eindeutigen Identität und charakteristischen Eigenschaft} überprüfbar ist"
+\end{itemize}
+\subsubsection{Authentifikationen}
+\begin{itemize}
+    \item \textbf{Nachweis}, dass eine behauptete Identität eines Objekts bzw Subjekts mit dessen charakterisierenden Eigenschaften übereinstimmt
+    \item z.B Benutzererkennungen, Benutzernamen mit Passwörtern, biometrische Merkmale als Eigenschaften
+\end{itemize}
+\subsection{Datenintegrität}
+\subsubsection{Datenintegrität}
+ist "[...] ist gewährleistet, wenn es Subjekten nicht möglich ist, die zu schützenden Daten \textbf{unautorisiert und unbemerkt} zu manipulieren"
+\begin{itemize}
+    \item Unautorisiert $\Rightarrow$ \textbf{Rechtefestlegung} z.B. Lese- oder Schreiberechtigungen für Dateien
+    \item Unbemerkt $\Rightarrow$ \textbf{Manipulationserkennung}. Manipulationen sind nicht vermeidbar, aber müssen erkannt werden (z.B. Hashfunktionen)
+\end{itemize}
+\subsection{Vertraulichkeit}
+"[ist] gewährleistet, wenn [...] \textbf{keine unautorisierte Informationsgewinnung} [möglich ist]"
+\begin{itemize}
+    \item Unautorisiert $\Rightarrow$ \textbf{Berichtigungen, Zugriffsrechte, und Kontrolle}
+    \item Unautorisiert $\Rightarrow$ \textbf{Verschlüsselung}
+\end{itemize}
+\subsection{Verfügbarkeit}
+\begin{itemize}
+    \item .[ist] gewährleistet, wenn \textbf{authentifizierte und autorisierte} Subjekte in der Wahrnehmung ihrer Berechtigungen \textbf{nicht} unautorisiert \textbf{beeinträchtigt} werden können"
+    \item d.h. "Normale" Nutzer verfügen unter normalen Bedingungen über die Ressourcen des Systems
+    \item z.B. Einführung von Quoten für CPU-Zeit oder Speicher 
+\end{itemize}
+\subsection{Verbindlichkeit}
+\subsubsection{Verbindlichkeit bzw. Zuordbarkeit}
+\begin{itemize}
+    \item "[ist] gewährleistet, wenn es nicht möglich ist, dass ein Subjekt im Nachhinein die \textbf{Durchführung einer solchen Aktion abstreiten} kann"
+    \item D.h. Die Aktionen eines Nutzers können zu seiner Person zugeordnet werden
+    \item z.B. \textbf{Digitale Signaturen}
+\end{itemize}
+\subsection{Inhärente Zielkonflikte}
+Um die \textbf{Vertraulichkeit} von Informationen zu schützen kann die Löschung der Information (Selbstzerstörung) angebracht sein
+$\Rightarrow$ Verlust der \textbf{Verfügbarkeit} \\
+Um die \textbf{Verfügbarkeit} von Informationen zu schützen, können Backup-Kopien von vertraulichen Informationen (z.B. Passwörter PINS) angebracht sein
+$\Rightarrow$ Erhöhtes Risiko des Verlusts der \textbf{Vertraulichkeit}
+\end{document}
